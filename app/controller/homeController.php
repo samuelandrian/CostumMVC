@@ -11,6 +11,7 @@ class homeController extends Controller//class homeController akan inherit class
 			'id'=>$id,
 		]);
 		//var_dump($this);
+		$this->view->page_title = 'this is index page';
 		$this->view->render();
 	}
 	
@@ -21,6 +22,7 @@ class homeController extends Controller//class homeController akan inherit class
 			'id'=>$id,
 		]);
 		//var_dump($this);
+		$this->view->page_title = 'this is about us page';
 		$this->view->render();
 	}
 }

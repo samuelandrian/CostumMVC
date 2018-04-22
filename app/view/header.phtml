@@ -1,0 +1,24 @@
+<?php
+	$action = $this->getAction();
+	//print $action;
+	//$action ini digunakan untuk mengaktifkan class active pada main.css
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<title><?php echo $action = $this->page_title; ?></title>
+</head>
+
+<body>
+	<nav>
+	<ul>
+		<li><a href="/home/index" <?php echo ($action == 'index'? 'class=active' : ''); ?>>Home</a></li>
+		<li><a href="/home/aboutUs"  <?php echo ($action == 'aboutUs'? 'class=active' : ''); ?>>About Us</a></li>
+		
+		
+	</ul>
+	</nav>
+

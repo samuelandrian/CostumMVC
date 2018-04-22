@@ -1,0 +1,45 @@
+<?php include VIEW.'header.phtml'; ?>
+<nav>
+	<ul>
+		<li><a href="/car/index">View car </a></li>
+		<li><a href="/car/edit">Edit car </a></li>
+		<li><a href="/car/delete">Delet Car </a></li>
+		
+	</ul>
+</nav>
+
+<?php 
+	if(array_key_exists('cars', $this->view_data)) //parameter kedua adalah nama array
+	{
+
+		//var_dump($this->view_data);//check
+
+		$table = '<table border=1>';
+		foreach ($this->view_data['cars'] as $car ) 
+		{
+			$car_info = explode(',',$car);
+			//var_dump($car_info);//check
+			$table = $table.'<tr>';
+			foreach ($car_info as $item) 
+			{
+				# code...
+				$table = $table.'<td>'.$item.'</td>';
+			}
+			$table = $table.'</tr>';
+
+		}
+		$table = $table.'</table>';
+
+		echo $table;
+	}
+
+
+
+
+
+
+?>
+
+
+<h1>Show car list</h1>
+<?php include VIEW.'footer.phtml'; ?>
